@@ -1,13 +1,18 @@
 #include <stdio.h>
-#include <string.h>
 
-int main (void)
-{
+int main(void) {
+    int compteur = 5;
     int i = 0;
-    while (i < 5)
-    {
-        printf("Boucles");
+
+    while (i < compteur) {
+        int j = 0;
+        while (j <= i) {
+            printf("* ");
+            j++;
+        }
+        printf("\n");
         i++;
     }
-    return 0 ;
+
+    return 0;
 }

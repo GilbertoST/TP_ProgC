@@ -1,19 +1,50 @@
 #include <stdio.h>
 
-int main() {
-    int a, b;
+int main(void) {
+    int num1 = 0;
+    int num2 = 0;
+    char op = '+';
 
-    // Équivalent de a = int(input())
-    scanf("%d", &a);
+    printf("Entrez num1 num2 op : ");
+    scanf("%d %d %c", &num1, &num2, &op);
 
-    // Équivalent de b = int(input())
-    scanf("%d", &b);
-
-    // Équivalents de print()
-    printf("Somme : %d\n", a + b);
-    printf("Différence : %d\n", a - b);
-    printf("Division entière : %d\n", a / b);  // Attention, la division de 2 entiers en C est entière (ex: 5/2 = 2)
-    printf("Modulo : %d\n", a % b);
+    switch (op) {
+        case '+':
+            printf("%d + %d = %d\n", num1, num2, num1 + num2);
+            break;
+        case '-':
+            printf("%d - %d = %d\n", num1, num2, num1 - num2);
+            break;
+        case '*':
+            printf("%d * %d = %d\n", num1, num2, num1 * num2);
+            break;
+        case '/':
+            if (num2 != 0) {
+                printf("%d / %d = %d\n", num1, num2, num1 / num2);
+            } else {
+                printf("Division par zero impossible.\n");
+            }
+            break;
+        case '%':
+            if (num2 != 0) {
+                printf("%d %% %d = %d\n", num1, num2, num1 % num2);
+            } else {
+                printf("Modulo par zero impossible.\n");
+            }
+            break;
+        case '&':
+            printf("%d & %d = %d\n", num1, num2, num1 & num2);
+            break;
+        case '|':
+            printf("%d | %d = %d\n", num1, num2, num1 | num2);
+            break;
+        case '~':
+            printf("~%d = %d\n", num1, ~num1);
+            break;
+        default:
+            printf("Operateur inconnu.\n");
+            break;
+    }
 
     return 0;
 }
